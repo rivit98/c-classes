@@ -9,16 +9,17 @@ int Vector::check_initial_size(int initSize) const{
 	return initSize;
 }
 
-Vector::Vector(size_t initSize) :
-								m_size(0),
-								m_capacity(check_initial_size(initSize)),
-								m_data(initSize ? std::unique_ptr<Fraction[]>(new Fraction[m_capacity]) : nullptr){
+Vector::Vector(size_t initSize)
+		: m_size(0),
+		m_capacity(check_initial_size(initSize)),
+		m_data(initSize ? std::unique_ptr<Fraction[]>(new Fraction[m_capacity]) : nullptr){
 }
 
-Vector::Vector(const Vector& other) : 
-									m_size(other.m_size),
-									m_capacity(other.m_capacity),
-									m_data(m_capacity ? std::unique_ptr<Fraction[]>(new Fraction[m_capacity]) : nullptr){
+Vector::Vector(const Vector& other) 
+		: m_size(other.m_size),
+		m_capacity(other.m_capacity),
+		m_data(m_capacity ? std::unique_ptr<Fraction[]>(new Fraction[m_capacity]) : nullptr){
+
 	if(m_data != nullptr){
 		std::copy(other.m_data.get(), other.m_data.get() + other.m_capacity, m_data.get());
 	}
@@ -38,8 +39,9 @@ Vector& Vector::operator=(const Vector& other){
 	return *this;
 }
 
-Vector::Vector(Vector&& other) :
-								Vector(){
+Vector::Vector(Vector&& other)
+		: Vector(){
+			
 	*this = std::move(other);
 }
 

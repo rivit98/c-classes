@@ -7,9 +7,10 @@ int Fraction::check_denominator(int x) const{
 	return x;
 }
 
-Fraction::Fraction(int n, int d) :
-								numerator(n),
-								denominator(check_denominator(d)){
+Fraction::Fraction(int n, int d) 
+		: numerator(n),
+		denominator(check_denominator(d)){
+			
 }
 
 int Fraction::getDenominator() const{
