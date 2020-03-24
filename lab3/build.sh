@@ -1,0 +1,1 @@
+g++ -std=c++17 -Wextra -Weffc++ -Wall main.cpp  fraction.cpp  fractionTests.cpp vector.cpp vectorTests.cpp utils/argumentParsing.cc utils/programmersDetails.cc utils/memoryManagement.cpp -o kolokwium -lgtest -lpthread
